@@ -1,4 +1,4 @@
-module light
+module github.com/petderek/light
 
 go 1.19
 
