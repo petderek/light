@@ -1,6 +1,6 @@
 module github.com/petderek/light
 
-go 1.19
+go 1.18
 
 require go.bug.st/serial v1.4.0
 

@@ -10,6 +10,16 @@ import (
 	"go.bug.st/serial"
 )
 
+func TestInfer(t *testing.T) {
+	cmd, err := Infer("green", "on")
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+	if cmd != GREEN_ON {
+		t.Fatal("was not GREEN_ON")
+	}
+}
+
 func TestSend(t *testing.T) {
 	s := &stub{}
 	open = s.testOpen
@@ -60,7 +70,7 @@ func TestLight(t *testing.T) {
 	if err := Send(port, GREEN_ON); err != nil {
 		t.Fatal(err)
 	}
-	time.Sleep(5 * time.Second)
+	time.Sleep(1 * time.Second)
 	if err := Off(port); err != nil {
 		t.Fatal(err)
 	}
